@@ -1,0 +1,62 @@
+/* Fundo clássico vermelho da Pokédex */
+body {
+    background-color: #dc0a2d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+header h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 30px;
+    font-size: 2.5em;
+}
+
+/* O segredo da grade automática */
+.grid-pokedex {
+    display: grid;
+    /* Cria colunas que se adaptam ao tamanho da tela */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* O cartãozinho de cada Pokémon */
+.cartao-mini {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.cartao-mini:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.cartao-mini img {
+    width: 120px;
+    height: 120px;
+    object-fit: contain; /* Evita que a imagem fique esticada */
+}
+
+.numero {
+    display: block;
+    color: #888;
+    font-size: 0.9em;
+    font-weight: bold;
+    text-align: right;
+}
+
+.nome-pokemon {
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0 0 0;
+    text-transform: capitalize;
+}
