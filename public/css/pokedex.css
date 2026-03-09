@@ -1,11 +1,38 @@
-/* Fundo clássico vermelho da Pokédex */
+/* =========================================
+   TEMAS DINÂMICOS DE FUNDO
+   ========================================= */
 body {
-    background-color: #dc0a2d;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
+    transition: background-color 0.5s ease; /* Transição suave ao mudar de tipo */
+    min-height: 100vh;
 }
 
+/* Cores oficiais dos tipos */
+.tema-padrao { background-color: #dc0a2d; }
+.tema-normal { background-color: #A8A878; }
+.tema-fire { background-color: #F08030; }
+.tema-water { background-color: #6890F0; }
+.tema-electric { background-color: #F8D030; }
+.tema-grass { background-color: #78C850; }
+.tema-ice { background-color: #98D8D8; }
+.tema-fighting { background-color: #C03028; }
+.tema-poison { background-color: #A040A0; }
+.tema-ground { background-color: #E0C068; }
+.tema-flying { background-color: #A890F0; }
+.tema-psychic { background-color: #F85888; }
+.tema-bug { background-color: #A8B820; }
+.tema-rock { background-color: #B8A038; }
+.tema-ghost { background-color: #705898; }
+.tema-dragon { background-color: #7038F8; }
+.tema-dark { background-color: #705848; }
+.tema-steel { background-color: #B8B8D0; }
+.tema-fairy { background-color: #EE99AC; }
+
+/* =========================================
+   CABEÇALHO
+   ========================================= */
 header h1 {
     text-align: center;
     color: white;
@@ -14,36 +41,167 @@ header h1 {
     font-size: 2.5em;
 }
 
-/* O segredo da grade automática */
+/* =========================================
+   ÁREA DE FILTROS E BUSCA
+   ========================================= */
+.form-filtros {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.linha-busca {
+    display: flex;
+    gap: 10px;
+}
+
+.input-busca {
+    flex: 1;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    font-size: 1.1em;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    outline: none;
+}
+
+.btn-filtrar {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: background 0.2s, transform 0.2s;
+    font-size: 1em;
+}
+
+.btn-filtrar:hover {
+    background-color: #111;
+    transform: translateY(-2px);
+}
+
+.linha-seletores {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.linha-seletores select {
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-weight: bold;
+    color: #444;
+    cursor: pointer;
+    flex: 1;
+    max-width: 300px;
+}
+
+/* =========================================
+   FILTRO DE TIPOS (BOTÕES RÁDIO CUSTOMIZADOS)
+   ========================================= */
+.linha-tipos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.label-tipo {
+    cursor: pointer;
+}
+
+/* Esconde a bolinha padrão do rádio */
+.label-tipo input[type="radio"] {
+    display: none;
+}
+
+/* Estilo do botão de tipo */
+.icone-tipo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 2px solid transparent;
+}
+
+.icone-tipo img {
+    width: 22px;
+    height: 22px;
+}
+
+.icone-todos {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Efeito Hover */
+.label-tipo:hover .icone-tipo {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Quando o input está checado (selecionado) */
+.label-tipo input[type="radio"]:checked + .icone-tipo {
+    background-color: #fff;
+    border-color: #333;
+    transform: scale(1.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* =========================================
+   GRID E CARTÕES
+   ========================================= */
 .grid-pokedex {
     display: grid;
-    /* Cria colunas que se adaptam ao tamanho da tela */
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* O cartãozinho de cada Pokémon */
+.link-cartao {
+    text-decoration: none;
+    color: inherit;
+}
+
 .cartao-mini {
     background-color: white;
     border-radius: 15px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .cartao-mini:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
 }
 
 .cartao-mini img {
-    width: 120px;
-    height: 120px;
-    object-fit: contain; /* Evita que a imagem fique esticada */
+    width: 130px;
+    height: 130px;
+    object-fit: contain;
 }
 
 .numero {
@@ -59,4 +217,15 @@ header h1 {
     color: #333;
     margin: 10px 0 0 0;
     text-transform: capitalize;
+    font-size: 1.1em;
+}
+
+/* Responsividade Básica */
+@media (max-width: 600px) {
+    .linha-seletores {
+        flex-direction: column;
+    }
+    .linha-seletores select {
+        max-width: 100%;
+    }
 }

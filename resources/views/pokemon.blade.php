@@ -5,91 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokédex - {{ $pokemon['nome'] }}</title>
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <style>
-        /* CSS Adicional para o novo layout, sem mexer no app.css */
-        
-        /* O contêiner do card agora é o pedestal branco */
-        .pokemon-card-detalhe {
-            background-color: #ffffff !important; /* Força o fundo branco */
-            padding: 20px !important;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4) !important; /* Sombra mais forte */
-        }
-
-        /* Moldura colorida na esquerda */
-        .moldura-esquerda {
-            border-radius: 20px;
-            padding: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-right: 20px;
-        }
-
-        /* O círculo pedestal branco onde o pokemon fica */
-        .pedestal-pokemon {
-            background-color: #ffffff;
-            border-radius: 50%;
-            width: 280px;
-            height: 280px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        .pedestal-pokemon img {
-            width: 240px;
-            height: 240px;
-            object-fit: contain;
-            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.3));
-        }
-
-        /* Nome do Pokémon no topo da direita */
-        .topo-direita {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #eee;
-        }
-
-        .topo-direita h2 {
-            margin: 0;
-            font-size: 2.2em;
-            text-transform: capitalize;
-            color: #333;
-        }
-
-        .topo-direita button {
-            margin: 0;
-        }
-
-        /* Responsividade para o novo layout */
-        @media (max-width: 600px) {
-            .moldura-esquerda {
-                margin-right: 0;
-                margin-bottom: 20px;
-            }
-            .pedestal-pokemon {
-                width: 200px;
-                height: 200px;
-            }
-            .pedestal-pokemon img {
-                width: 170px;
-                height: 170px;
-            }
-            .topo-direita {
-                flex-direction: column;
-                gap: 10px;
-                text-align: center;
-            }
-        }
-    </style>
 </head>
 
 @php
-    // Dicionário de Cores para os Tipos
     $coresTipos = [
         'normal' => '#A8A878', 'fire' => '#F08030', 'water' => '#6890F0',
         'electric' => '#F8D030', 'grass' => '#78C850', 'ice' => '#98D8D8',
@@ -99,49 +17,93 @@
         'dark' => '#705848', 'steel' => '#B8B8D0', 'fairy' => '#EE99AC'
     ];
 
-    // Define a cor 1 e cor 2
     $cor1 = $coresTipos[$pokemon['tipo'][0]] ?? '#ccc';
     $cor2 = isset($pokemon['tipo'][1]) ? $coresTipos[$pokemon['tipo'][1]] : $cor1;
 
-    // Fundo diagonal do Body (permanece)
     if (isset($pokemon['tipo'][1])) {
         $bgBody = "linear-gradient(to bottom left, {$cor1} 0%, {$cor1} calc(50% - 5px), #ffffff calc(50% - 5px), #ffffff calc(50% + 5px), {$cor2} calc(50% + 5px), {$cor2} 100%)";
     } else {
         $bgBody = $cor1;
     }
+
+    $todasAsFormas = [
+        'normal' => [
+            'nome' => $pokemon['nome'],
+            'tipos' => $pokemon['tipo'],
+            'status' => $pokemon['status'],
+            'img' => $pokemon['img_oficial']
+        ]
+    ];
+
+    if (!empty($pokemon['img_shiny'])) {
+        $todasAsFormas['shiny'] = [
+            'nome' => $pokemon['nome'] . ' (Shiny)',
+            'tipos' => $pokemon['tipo'],
+            'status' => $pokemon['status'],
+            'img' => $pokemon['img_shiny']
+        ];
+    }
+
+    foreach ($pokemon['formas_alternativas'] as $index => $forma) {
+        if(empty($forma['img_oficial'])) continue; 
+        
+        $key = 'forma_' . $index;
+        $todasAsFormas[$key] = [
+            'nome' => $forma['nome'],
+            'tipos' => $forma['tipos'],
+            'status' => $forma['status'],
+            'img' => $forma['img_oficial']
+        ];
+        
+        if (!empty($forma['img_shiny'])) {
+            $todasAsFormas[$key.'_shiny'] = [
+                'nome' => $forma['nome'] . ' (Shiny)',
+                'tipos' => $forma['tipos'],
+                'status' => $forma['status'],
+                'img' => $forma['img_shiny']
+            ];
+        }
+    }
 @endphp
 
-<body style="background: {{ $bgBody }}; min-height: 100vh; margin: 0; background-attachment: fixed; padding: 20px;">
+<body style="background: {{ $bgBody }}; background-attachment: fixed;" id="body-bg" class="body-detalhe">
 
-    <a href="/" class="btn-voltar">⬅ Voltar</a>
+    <a href="/?{{ http_build_query(request()->all()) }}" class="btn-voltar">⬅ Voltar</a>
 
-    <div class="pokemon-container">
-        <div class="pokemon-card-detalhe" id="card-pokemon" style="display: flex; align-items: stretch;">
+    <div class="main-wrapper">
+        <div class="formas-menu">
+            <button class="btn-forma ativo" onclick="mudarForma('normal', this)">Normal</button>
+            @if(!empty($pokemon['img_shiny']))
+                <button class="btn-forma" onclick="mudarForma('shiny', this)">✨ Shiny</button>
+            @endif
             
-            <div class="moldura-esquerda" style="background: linear-gradient(135deg, {{ $cor1 }} 0%, {{ $cor2 }} 100%); flex: none;">
+            @foreach ($pokemon['formas_alternativas'] as $index => $forma)
+                @if(!empty($forma['img_oficial']))
+                    <button class="btn-forma" onclick="mudarForma('forma_{{ $index }}', this)">{{ $forma['tipo_forma'] }}</button>
+                    @if(!empty($forma['img_shiny']))
+                        <button class="btn-forma" onclick="mudarForma('forma_{{ $index }}_shiny', this)">✨ {{ $forma['tipo_forma'] }} Shiny</button>
+                    @endif
+                @endif
+            @endforeach
+        </div>
+
+        <div class="pokemon-card-detalhe" id="card-pokemon">
+            <div class="moldura-esquerda" id="moldura-tipo" style="background: linear-gradient(135deg, {{ $cor1 }} 0%, {{ $cor2 }} 100%);">
                 <div class="pedestal-pokemon">
-                    <img id="poke-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{ $pokemon['id'] }}.png" alt="{{ $pokemon['nome'] }}">
+                    <img id="poke-img" src="{{ $pokemon['img_oficial'] }}" alt="{{ $pokemon['nome'] }}">
                 </div>
             </div>
 
-            <div class="card-direita" style="flex: 1; padding: 0 10px;">
-                
+            <div class="card-direita">
                 <div class="topo-direita">
-                    <h2>{{ $pokemon['nome'] }}</h2>
-                    <button id="btn-ataque" style="background-color: {{ $cor1 }}; color: white;">Ação / Animação!</button>
+                    <h2 id="poke-nome">{{ $pokemon['nome'] }}</h2>
+                    <button class="btn-acao" id="btn-ataque" style="background-color: {{ $cor1 }};">Ação!</button>
                 </div>
 
                 <div class="grid-info">
-                    <div class="info-box" style="grid-column: span 2;">
+                    <div class="info-box box-span-2">
                         <small>Tipos</small>
-                        <div style="display: flex; justify-content: center; gap: 10px; margin-top: 5px;">
-                            @foreach($pokemon['tipo'] as $tipo)
-                                <div style="background-color: {{ $coresTipos[$tipo] }}; padding: 5px 12px; border-radius: 20px; color: white; display: flex; align-items: center; gap: 5px; font-size: 0.85em; text-transform: uppercase; font-weight: bold; box-shadow: 0 2px 4px rgba(0,0,0,0.2);">
-                                    <img src="https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/master/icons/{{ $tipo }}.svg" style="width: 14px; height: 14px; margin: 0; transition: none; filter: none;">
-                                    {{ $tipo }}
-                                </div>
-                            @endforeach
-                        </div>
+                        <div id="container-tipos" class="tipos-wrapper"></div>
                     </div>
 
                     <div class="info-box">
@@ -154,33 +116,98 @@
                     </div>
                 </div>
 
-                <div class="pokedex-entry" style="margin-bottom: 20px;">
+                <div class="pokedex-entry">
                     <h3>Descrição Pokedex</h3>
                     <p>{{ $pokemon['descricao'] }}</p>
                 </div>
                 
-                <div>
-                    <h3 style="color: #333; font-size: 1.1em; margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 5px;">Status Base</h3>
-                    @foreach($pokemon['status'] as $nome => $valor)
-                        <div style="display: flex; align-items: center; margin-bottom: 8px; font-size: 0.9em;">
-                            <span style="width: 80px; font-weight: bold; color: #666;">{{ $nome }}</span>
-                            <span style="width: 35px; text-align: right; margin-right: 15px; font-weight: bold; color: #333;">{{ $valor }}</span>
-                            <div style="flex: 1; background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
-                                <div style="width: {{ min(100, ($valor / 255) * 100) }}%; height: 100%; background-color: {{ $cor1 }}; border-radius: 10px;"></div>
-                            </div>
-                        </div>
-                    @endforeach
+                <div class="status-container">
+                    <h3>Status Base</h3>
+                    <div id="container-status"></div>
                 </div>
-
             </div>
         </div>
     </div>
 
     <script>
+        const dadosFormas = @json($todasAsFormas);
+        const coresTipos = @json($coresTipos);
+
+        function renderizarTipos(tipos) {
+            const container = document.getElementById('container-tipos');
+            container.innerHTML = '';
+            tipos.forEach(tipo => {
+                const cor = coresTipos[tipo] || '#ccc';
+                container.innerHTML += `
+                    <div class="badge-tipo" style="background-color: ${cor};">
+                        <img src="https://raw.githubusercontent.com/duiker101/pokemon-type-svg-icons/master/icons/${tipo}.svg">
+                        ${tipo}
+                    </div>
+                `;
+            });
+        }
+
+        function renderizarStatus(status, corPrincipal) {
+            const container = document.getElementById('container-status');
+            container.innerHTML = '';
+            for (const [nome, valor] of Object.entries(status)) {
+                const porcentagem = Math.min(100, (valor / 255) * 100);
+                container.innerHTML += `
+                    <div class="status-row">
+                        <span class="status-label">${nome}</span>
+                        <span class="status-valor">${valor}</span>
+                        <div class="status-bar-bg">
+                            <div class="status-bar-fill" style="width: ${porcentagem}%; background-color: ${corPrincipal};"></div>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        function atualizarCoresFundo(tipos) {
+            const cor1 = coresTipos[tipos[0]] || '#ccc';
+            const cor2 = tipos[1] ? coresTipos[tipos[1]] : cor1;
+            
+            document.getElementById('moldura-tipo').style.background = `linear-gradient(135deg, ${cor1} 0%, ${cor2} 100%)`;
+            document.getElementById('btn-ataque').style.backgroundColor = cor1;
+
+            const bodyBg = tipos[1] 
+                ? `linear-gradient(to bottom left, ${cor1} 0%, ${cor1} calc(50% - 5px), #ffffff calc(50% - 5px), #ffffff calc(50% + 5px), ${cor2} calc(50% + 5px), ${cor2} 100%)`
+                : cor1;
+            document.getElementById('body-bg').style.background = bodyBg;
+
+            return cor1;
+        }
+
+        function mudarForma(chaveForma, btnElement) {
+            document.querySelectorAll('.btn-forma').forEach(b => b.classList.remove('ativo'));
+            btnElement.classList.add('ativo');
+
+            const dados = dadosFormas[chaveForma];
+            const imgEl = document.getElementById('poke-img');
+            
+            imgEl.classList.add('fade-out');
+            
+            setTimeout(() => {
+                imgEl.src = dados.img;
+                document.getElementById('poke-nome').innerText = dados.nome;
+                
+                const corPrincipal = atualizarCoresFundo(dados.tipos);
+                renderizarTipos(dados.tipos);
+                renderizarStatus(dados.status, corPrincipal);
+                
+                imgEl.classList.remove('fade-out');
+            }, 300);
+        }
+
+        // Init
+        renderizarTipos(dadosFormas['normal'].tipos);
+        renderizarStatus(dadosFormas['normal'].status, coresTipos[dadosFormas['normal'].tipos[0]]);
+
         document.getElementById('btn-ataque').addEventListener('click', () => {
             const img = document.getElementById('poke-img');
-            img.classList.add('ataque-animacao');
-            setTimeout(() => img.classList.remove('ataque-animacao'), 500);
+            img.style.transform = 'scale(1.2) rotate(10deg)';
+            setTimeout(() => img.style.transform = 'scale(1) rotate(0deg)', 300);
         });
     </script>
 </body>
