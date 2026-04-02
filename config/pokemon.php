@@ -8245,7 +8245,7 @@ return array (
     ),
     'peso' => 152,
     'altura' => 1.8,
-    'descricao' => 'It is said that it usually hides in underwater caves. It can create whirlpools by yawning.',
+    'descricao' => 'It lives in caves on the seafloor and creates giant whirlpools every time it moves.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/230.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/230.png',
     'formas_alternativas' => 
@@ -8651,7 +8651,7 @@ return array (
     ),
     'peso' => 187,
     'altura' => 2,
-    'descricao' => 'It races around the world to purify fouled water. It dashes away with the north wind.',
+    'descricao' => 'Said to be the reincarnation of north winds, it can instantly purify filthy, murky water.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/245.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/245.png',
     'formas_alternativas' => 
@@ -9366,7 +9366,7 @@ return array (
     ),
     'peso' => 10,
     'altura' => 0.6,
-    'descricao' => 'SILCOON tethers itself to a tree branch using silk to keep from falling. There,  this POKéMON hangs quietly while it awaits evolution. It peers out of the silk cocoon through a small hole.',
+    'descricao' => 'It drinks dew that collects on its silk and waits for evolution. Its hard cocoon repels attacks.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/266.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/266.png',
     'formas_alternativas' => 
@@ -9449,7 +9449,7 @@ return array (
     ),
     'peso' => 31.6,
     'altura' => 1.2,
-    'descricao' => 'DUSTOX is instinctively drawn to light. Swarms of this POKéMON are attracted by the bright lights of cities, where they wreak havoc by stripping the leaves off roadside trees for food.',
+    'descricao' => 'It violently flutters its wings to scatter toxic dust when attacked. It becomes active after sunset.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/269.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/269.png',
     'formas_alternativas' => 
@@ -9505,7 +9505,7 @@ return array (
     ),
     'peso' => 32.5,
     'altura' => 1.2,
-    'descricao' => 'It lives at the water’s edge where it is sunny. It sleeps on a bed of water grass by day and becomes active at night.',
+    'descricao' => 'LOMBRE is nocturnal - it will get active after dusk. It is also a mischief-maker. When this POKéMON spots anglers, it tugs on their fishing lines from beneath the surface and enjoys their consternation.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/271.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/271.png',
     'formas_alternativas' => 
@@ -9616,7 +9616,7 @@ return array (
     ),
     'peso' => 59.6,
     'altura' => 1.3,
-    'descricao' => 'It lives quietly in the deep forest. It is said to create chilly winter winds with the fans it holds.',
+    'descricao' => 'SHIFTRY is a mysterious POKéMON that is said to live atop towering trees  dating back over a thousand years. It creates terrific windstorms with the fans it holds.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/275.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/275.png',
     'formas_alternativas' => 
@@ -10111,7 +10111,7 @@ return array (
     ),
     'peso' => 1.2,
     'altura' => 0.8,
-    'descricao' => 'SHEDINJA’s hard body doesn’t move - not even a twitch. In fact, its body appears to be merely a hollow shell. It is believed that this POKéMON will steal the spirit of anyone peering into its hollow body from its back.',
+    'descricao' => 'A discarded bug shell that came to life. Peering into the crack on its back is said to steal one’s spirit.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/292.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/292.png',
     'formas_alternativas' => 
@@ -10246,7 +10246,7 @@ return array (
     ),
     'peso' => 253.8,
     'altura' => 2.3,
-    'descricao' => 'It has the habit of challenging others without hesitation to tests of strength. It’s been known to stand on train tracks and stop trains using forearm thrusts.',
+    'descricao' => 'HARIYAMA practices its straight-arm slaps in any number of locations. One hit of this POKéMON’s powerful, openhanded, straight-arm punches could snap a telephone pole in two.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/297.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/297.png',
     'formas_alternativas' => 
@@ -11147,7 +11147,7 @@ return array (
     ),
     'peso' => 80.4,
     'altura' => 0.5,
-    'descricao' => 'You can tell how it’s feeling by the smoke spouting from its shell. Tremendous velocity is a sign of good health.',
+    'descricao' => 'TORKOAL digs through mountains in search of coal. If it finds some, it fills hollow spaces on its shell with the coal and burns it. If it is attacked, this POKéMON spouts thick black smoke to beat a retreat.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/324.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/324.png',
     'formas_alternativas' => 
@@ -11555,7 +11555,7 @@ return array (
     ),
     'peso' => 154,
     'altura' => 1.2,
-    'descricao' => 'Solar energy is the source of its power, so it is strong during the daytime. When it spins, its body shines.',
+    'descricao' => 'SOLROCK is a new species of POKéMON that is said to have fallen from space. It floats in air and moves silently. In battle, this POKéMON releases intensely bright light.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/338.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/338.png',
     'formas_alternativas' => 
@@ -11583,7 +11583,7 @@ return array (
     ),
     'peso' => 1.9,
     'altura' => 0.4,
-    'descricao' => 'BARBOACH’s sensitive whiskers serve as a superb radar system. This POKéMON hides in mud, leaving only its two whiskers exposed while it waits for prey to come along.',
+    'descricao' => 'It coats its entire body with a slimy fluid so it can squirm and slip away if grabbed.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/339.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/339.png',
     'formas_alternativas' => 
@@ -11888,7 +11888,7 @@ return array (
     ),
     'peso' => 162,
     'altura' => 6.2,
-    'descricao' => 'Its lovely scales are described as rainbow colored. They change color depending on the viewing angle.',
+    'descricao' => 'MILOTIC is said to be the most beautiful of all the POKéMON. It has the power to becalm such emotions as anger and hostility to quell bitter feuding.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/350.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/350.png',
     'formas_alternativas' => 
@@ -12572,7 +12572,7 @@ return array (
     ),
     'peso' => 42.1,
     'altura' => 0.6,
-    'descricao' => 'Dreaming of one day flying, it practices by leaping off cliffs every day.',
+    'descricao' => 'BAGON has a dream of one day soaring in the sky. In doomed efforts to fly, this POKéMON hurls itself off cliffs. As a result of its dives, its head has  grown tough and as hard as tempered steel.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/371.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/371.png',
     'formas_alternativas' => 
@@ -12678,7 +12678,7 @@ return array (
     ),
     'peso' => 95.2,
     'altura' => 0.6,
-    'descricao' => 'Instead of blood, a powerful magnetic force courses throughout BELDUM’s body. This POKéMON communicates with others by sending controlled pulses of magnetism.',
+    'descricao' => 'It converses with others by using magnetic pulses. In a swarm, they move in perfect unison.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/374.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/374.png',
     'formas_alternativas' => 
@@ -12734,7 +12734,7 @@ return array (
     ),
     'peso' => 550,
     'altura' => 1.6,
-    'descricao' => 'METAGROSS has four brains in total. Combined, the four brains can breeze through difficult calculations faster than a supercomputer. This POKéMON can float in the air by tucking in its four legs.',
+    'descricao' => 'It analyzes its opponents with more accuracy than a supercomputer, which enables it to calmly back them into a corner.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/376.png',
     'formas_alternativas' => 
@@ -12784,7 +12784,7 @@ return array (
     ),
     'peso' => 230,
     'altura' => 1.7,
-    'descricao' => 'Its entire body is made of rock. If any part chips off in battle, it attaches rocks to repair itself.',
+    'descricao' => 'REGIROCK was sealed away by people long ago. If this POKéMON’s body is damaged in battle, it is said to seek out suitable rocks on its own to repair itself.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/377.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/377.png',
     'formas_alternativas' => 
@@ -13100,7 +13100,7 @@ return array (
     ),
     'peso' => 60.8,
     'altura' => 1.7,
-    'descricao' => 'The DNA of a space virus underwent a sudden mutation upon exposure to a laser beam and resulted in DEOXYS. The crystalline organ on this POKéMON’s chest appears to be its brain.',
+    'descricao' => 'An alien virus that fell to earth on a meteor underwent a DNA mutation to become this Pokémon.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/386.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/386.png',
     'formas_alternativas' => 
@@ -13154,7 +13154,7 @@ return array (
     ),
     'peso' => 97,
     'altura' => 1.1,
-    'descricao' => 'It knows where pure water wells up. It carries fellow Pokémon there on its back.',
+    'descricao' => 'It lives along water in forests. In the daytime, it leaves the forest to sunbathe its treed shell.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/388.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/388.png',
     'formas_alternativas' => 
@@ -14657,7 +14657,7 @@ return array (
     ),
     'peso' => 1.9,
     'altura' => 0.5,
-    'descricao' => 'It can learn and speak human words. If they gather, they all learn the same saying.',
+    'descricao' => 'Its tongue is just like a human’s. As a result, it can cleverly mimic human speech.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/441.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/441.png',
     'formas_alternativas' => 
@@ -15461,7 +15461,7 @@ return array (
     ),
     'peso' => 138.6,
     'altura' => 1.8,
-    'descricao' => 'As its electric charge amplifies, blue sparks begin to crackle between its horns.',
+    'descricao' => 'It pushes the tips of its two tails against the foe, then lets loose with over 20,000 volts of power.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/466.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/466.png',
     'formas_alternativas' => 
@@ -15760,7 +15760,7 @@ return array (
     ),
     'peso' => 340,
     'altura' => 1.4,
-    'descricao' => 'It freely controls three small units called Mini-Noses using magnetic force.',
+    'descricao' => 'It exudes strong magnetism from all over. It controls three small units called Mini-Noses.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/476.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/476.png',
     'formas_alternativas' => 
@@ -16163,7 +16163,7 @@ return array (
     ),
     'peso' => 3.1,
     'altura' => 0.4,
-    'descricao' => 'It drifts in warm seas. It always returns to where it was born, no matter how far it may have drifted.',
+    'descricao' => 'A Pokémon that lives in warm seas. It inflates the flotation sac on its head to drift and search for food.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/489.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/489.png',
     'formas_alternativas' => 
@@ -16190,7 +16190,7 @@ return array (
     ),
     'peso' => 1.4,
     'altura' => 0.3,
-    'descricao' => 'Born on a cold seafloor, it will swim great distances to return to its birthplace.',
+    'descricao' => 'It is born with a wondrous power that lets it bond with any kind of Pokémon.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/490.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/490.png',
     'formas_alternativas' => 
@@ -17128,7 +17128,7 @@ return array (
     ),
     'peso' => 29.8,
     'altura' => 0.8,
-    'descricao' => 'When thunderclouds cover the sky, it will appear. It can catch lightning with its mane and store the electricity.',
+    'descricao' => 'Its mane shines when it discharges electricity. They use their flashing manes to communicate with one another.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/522.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/522.png',
     'formas_alternativas' => 
@@ -18249,7 +18249,7 @@ return array (
     ),
     'peso' => 14.5,
     'altura' => 0.3,
-    'descricao' => 'This Pokémon can easily melt holes in hard rocks with a liquid secreted from its mouth.',
+    'descricao' => 'When it finds a stone of a suitable size, it secretes a liquid from its mouth to open up a hole to crawl into.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/557.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/557.png',
     'formas_alternativas' => 
@@ -19573,7 +19573,7 @@ return array (
     ),
     'peso' => 81,
     'altura' => 0.6,
-    'descricao' => 'The gear with the red core is rotated at high speed for a rapid energy charge.',
+    'descricao' => 'Its red core functions as an energy tank. It fires the charged energy through its spikes into an area.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/601.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/601.png',
     'formas_alternativas' => 
@@ -20454,7 +20454,7 @@ return array (
     ),
     'peso' => 9,
     'altura' => 0.5,
-    'descricao' => 'Their wings are too tiny to allow them to fly. They guard their posteriors with bones that were gathered by Mandibuzz.',
+    'descricao' => 'Its wings are too tiny to allow it to fly. As the time approaches for it to evolve, it discards the bones it was wearing.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/629.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/629.png',
     'formas_alternativas' => 
@@ -20928,7 +20928,7 @@ return array (
     ),
     'peso' => 325,
     'altura' => 3,
-    'descricao' => 'It generates a powerful, freezing energy inside itself, but its body became frozen when the energy leaked out.',
+    'descricao' => 'It can produce ultracold air. Its body is frozen.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/646.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/646.png',
     'formas_alternativas' => 
@@ -22107,7 +22107,7 @@ return array (
     ),
     'peso' => 3.5,
     'altura' => 0.4,
-    'descricao' => 'To entangle its opponents in battle, it extrudes white threads as sweet and sticky as cotton candy.',
+    'descricao' => 'Because it eats nothing but sweets, its fur is as sticky sweet as cotton candy.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/684.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/684.png',
     'formas_alternativas' => 
@@ -22699,7 +22699,7 @@ return array (
     ),
     'peso' => 2.2,
     'altura' => 0.2,
-    'descricao' => 'Its whiskers serve as antennas. By sending and receiving electrical waves, it can communicate with others over vast distances.',
+    'descricao' => 'Since Dedenne can’t generate much electricity on its own, it steals electricity from outlets or other electric Pokémon.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/702.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/702.png',
     'formas_alternativas' => 
@@ -24490,7 +24490,7 @@ return array (
     ),
     'peso' => 3.2,
     'altura' => 0.3,
-    'descricao' => 'A delectable aroma pours from its body. They are often swallowed whole by Toucannon lured by that wafting deliciousness.',
+    'descricao' => 'Because of its sweet, delicious aroma, bird Pokémon are always after it, but it’s not intelligent enough to care.',
     'img_oficial' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/761.png',
     'img_shiny' => 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/761.png',
     'formas_alternativas' => 

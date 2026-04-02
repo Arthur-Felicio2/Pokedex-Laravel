@@ -5,40 +5,181 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 20px;
-    transition: background-color 0.5s ease; /* Transição suave ao mudar de tipo */
+    transition: background-color 0.5s ease;
+    /* Transição suave ao mudar de tipo */
     min-height: 100vh;
 }
 
 /* Cores oficiais dos tipos */
-.tema-padrao { background-color: #dc0a2d; }
-.tema-normal { background-color: #A8A878; }
-.tema-fire { background-color: #F08030; }
-.tema-water { background-color: #6890F0; }
-.tema-electric { background-color: #F8D030; }
-.tema-grass { background-color: #78C850; }
-.tema-ice { background-color: #98D8D8; }
-.tema-fighting { background-color: #C03028; }
-.tema-poison { background-color: #A040A0; }
-.tema-ground { background-color: #E0C068; }
-.tema-flying { background-color: #A890F0; }
-.tema-psychic { background-color: #F85888; }
-.tema-bug { background-color: #A8B820; }
-.tema-rock { background-color: #B8A038; }
-.tema-ghost { background-color: #705898; }
-.tema-dragon { background-color: #7038F8; }
-.tema-dark { background-color: #705848; }
-.tema-steel { background-color: #B8B8D0; }
-.tema-fairy { background-color: #EE99AC; }
+.tema-padrao {
+    background-color: #dc0a2d;
+}
+
+.tema-normal {
+    background-color: #A8A878;
+}
+
+.tema-fire {
+    background-color: #F08030;
+}
+
+.tema-water {
+    background-color: #6890F0;
+}
+
+.tema-electric {
+    background-color: #F8D030;
+}
+
+.tema-grass {
+    background-color: #78C850;
+}
+
+.tema-ice {
+    background-color: #98D8D8;
+}
+
+.tema-fighting {
+    background-color: #C03028;
+}
+
+.tema-poison {
+    background-color: #A040A0;
+}
+
+.tema-ground {
+    background-color: #E0C068;
+}
+
+.tema-flying {
+    background-color: #A890F0;
+}
+
+.tema-psychic {
+    background-color: #F85888;
+}
+
+.tema-bug {
+    background-color: #A8B820;
+}
+
+.tema-rock {
+    background-color: #B8A038;
+}
+
+.tema-ghost {
+    background-color: #705898;
+}
+
+.tema-dragon {
+    background-color: #7038F8;
+}
+
+.tema-dark {
+    background-color: #705848;
+}
+
+.tema-steel {
+    background-color: #B8B8D0;
+}
+
+.tema-fairy {
+    background-color: #EE99AC;
+}
 
 /* =========================================
-   CABEÇALHO
+   CABEÇALHO E NAVEGAÇÃO
    ========================================= */
-header h1 {
-    text-align: center;
+.cabecalho-principal {
+    display: flex;
+    justify-content: flex-end;
+    /* Empurra os botões para a direita */
+    align-items: center;
+    padding: 20px 30px;
+    position: relative;
+    /* Essencial para o título ficar no centro absoluto */
+    min-height: 60px;
+    margin-bottom: 20px;
+}
+
+.cabecalho-principal h1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Crava o texto exatamente no meio da tela */
+    margin: 0;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     font-size: 2.5em;
+}
+
+.botoes-navegacao {
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+    /* Garante que os botões fiquem clicáveis por cima de tudo */
+}
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+    /* Fundo branco levemente transparente */
+    color: #333;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.85em;
+    letter-spacing: 1px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    /* Formato de pílula */
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    /* Efeito de vidro */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    /* Animação super suave */
+}
+
+/* Efeito ao passar o mouse */
+.btn-voltar:hover {
+    background: #ffffff;
+    color: #000;
+    transform: translateY(-4px) scale(1.02);
+    /* Levita e cresce um pouquinho */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    /* Sombra expande */
+    border-color: #fff;
+}
+
+/* Efeito ao clicar */
+.btn-voltar:active {
+    transform: translateY(1px);
+    /* Afunda ao clicar */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsividade: No celular, o título e os botões ficam um embaixo do outro */
+@media (max-width: 768px) {
+    .cabecalho-principal {
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .cabecalho-principal h1 {
+        position: static;
+        /* Tira o posicionamento absoluto no mobile */
+        transform: none;
+    }
+
+    .botoes-navegacao {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
 
 /* =========================================
@@ -67,7 +208,7 @@ header h1 {
     border-radius: 30px;
     border: none;
     font-size: 1.1em;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     outline: none;
 }
 
@@ -98,12 +239,23 @@ header h1 {
     padding: 10px 15px;
     border-radius: 10px;
     border: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     color: #444;
     cursor: pointer;
     flex: 1;
     max-width: 300px;
+}
+
+/* Responsividade Básica dos Filtros */
+@media (max-width: 600px) {
+    .linha-seletores {
+        flex-direction: column;
+    }
+
+    .linha-seletores select {
+        max-width: 100%;
+    }
 }
 
 /* =========================================
@@ -136,7 +288,7 @@ header h1 {
     background-color: rgba(255, 255, 255, 0.5);
     border-radius: 50%;
     transition: all 0.2s ease;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border: 2px solid transparent;
 }
 
@@ -158,11 +310,11 @@ header h1 {
 }
 
 /* Quando o input está checado (selecionado) */
-.label-tipo input[type="radio"]:checked + .icone-tipo {
+.label-tipo input[type="radio"]:checked+.icone-tipo {
     background-color: #fff;
     border-color: #333;
     transform: scale(1.15);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================================
@@ -186,7 +338,7 @@ header h1 {
     border-radius: 15px;
     padding: 15px;
     text-align: center;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s, box-shadow 0.2s;
     cursor: pointer;
     height: 100%;
@@ -195,7 +347,7 @@ header h1 {
 
 .cartao-mini:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.35);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.35);
 }
 
 .cartao-mini img {
@@ -218,14 +370,4 @@ header h1 {
     margin: 10px 0 0 0;
     text-transform: capitalize;
     font-size: 1.1em;
-}
-
-/* Responsividade Básica */
-@media (max-width: 600px) {
-    .linha-seletores {
-        flex-direction: column;
-    }
-    .linha-seletores select {
-        max-width: 100%;
-    }
 }

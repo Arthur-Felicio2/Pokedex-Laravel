@@ -1,0 +1,209 @@
+/* Base e Resets */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dc0a2d; 
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease;
+    min-height: 100vh;
+}
+
+/* Cores Dinâmicas Baseadas na Página Atual */
+.tema-padrao { background-color: #dc0a2d; } /* Vermelho */
+.tema-pokemon { background-color: #3498db; } /* Azul */
+.tema-trainer { background-color: #9b59b6; } /* Roxo */
+.tema-energy { background-color: #2ecc71; } /* Verde */
+.tema-dark { background-color: #34495e; } /* Azul Escuro/Cinza */
+.tema-fairy { background-color: #e84393; } /* Rosa */
+
+/* Header Modernizado */
+header {
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0) 100%);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    position: relative;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    letter-spacing: 1px;
+}
+
+.btn-voltar {
+    position: absolute;
+    left: 30px;
+    top: 45px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.btn-voltar:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Filtros */
+.form-filtros {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.linha-busca { display: flex; gap: 10px; }
+.input-busca { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; outline: none;}
+.input-busca:focus { border-color: #3498db; }
+.btn-filtrar { padding: 10px 20px; background: #333; color: white; border: none; border-radius: 5px; cursor: pointer; transition: background 0.2s; font-weight: bold;}
+.btn-filtrar:hover { background: #111; }
+
+.linha-seletores { display: flex; gap: 10px; }
+.linha-seletores select { flex: 1; padding: 10px; border-radius: 5px; border: 1px solid #ccc; outline: none; cursor: pointer;}
+.linha-seletores select:focus { border-color: #3498db; }
+
+/* =========================================
+   GRID E CARTÕES DE JOGOS (ALTURA FIXA E ALINHADA)
+   ========================================= */
+.grid-jogos {
+    display: grid;
+    /* Um pouco mais largo que o de TCG pois caixas de jogos variam mais */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.cartao-jogo {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%; 
+}
+
+.cartao-jogo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+}
+
+.imagem-container {
+    padding: 15px;
+    /* Fundo levemente cinza para destacar caixas brancas (como as do Switch) */
+    background: #f8f9fa; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 250px; 
+    flex-shrink: 0; 
+    border-bottom: 1px solid #eee;
+}
+
+.imagem-container img {
+    max-width: 100%;
+    max-height: 100%; 
+    object-fit: contain; 
+    border-radius: 5px;
+    /* Pequena sombra na própria capa do jogo para dar profundidade */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15); 
+}
+
+.sem-imagem {
+    color: #888;
+    font-weight: bold;
+}
+
+.info-jogo {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+}
+
+.nome-jogo {
+    margin: 0 0 15px 0;
+    font-weight: 900;
+    font-size: 1.1em;
+    color: #2c3e50;
+    line-height: 1.2;
+}
+
+.badges-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.badge {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: white;
+}
+
+/* Cores específicas para os badges */
+.badge-console { background-color: #e74c3c; } /* Vermelho estilo Nintendo */
+.badge-geracao { background-color: #34495e; } /* Cinza escuro */
+
+.ano-jogo {
+    margin-top: auto; /* Empurra o ano para o fundo */
+    color: #7f8c8d;
+    font-size: 0.9em;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+}
+
+.ano-jogo strong {
+    color: #333;
+}
+
+.mensagem-vazia {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+    color: white;
+    font-weight: bold;
+    background: rgba(0,0,0,0.2);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+/* =========================================
+   PAGINAÇÃO DO LARAVEL
+   ========================================= */
+.paginacao-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+* {
+    border: none;
+}
